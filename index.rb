@@ -9,7 +9,7 @@ group = ["cat", "Alex", "Daniel", "Andrew", "jario", "Varsha"]
 
 
 while true
-    puts "There are #{group.length} members in the group"
+    puts "There are #{group.length} #{group.length == 1 ? 'member' : 'members'} in the group"
     puts "Press 1) to add a member to the group." 
     puts "Press 2) to display a random group."
     puts "Press 3) to quit"
