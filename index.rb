@@ -4,12 +4,13 @@
 # ADD PERSON IMPLEMENTION: User input, add to array .push?
 # RANDOM ORDER IMPLEMENTATION: Copy array, select random name - get random index (number between 0 and array length -1 )
 #   get name at random index, delete name from array, keep going until array length == 0
-require_relative("methods")
+require_relative('methods')
+require 'espeak'
 
 require_relative('methods')
 group = ["Alex", "Daniel", "Cat", "Andrew", "Jario", "Varsha"]
 
-
+Espeak::Speech.new("Welcome to the random group selector").speak
 while true
     output_member_message(group.length)
     case menu_input_select
