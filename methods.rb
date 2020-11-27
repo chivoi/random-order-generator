@@ -62,8 +62,8 @@ def add_name_to_group(group)
 end 
 
 def display_random_order(arr)
-    arr.shuffle.each do |item| 
-        puts item
+    arr.shuffle.each do |item|
+        pause(1, item)
     end 
 end
 
@@ -71,7 +71,15 @@ def quit_program
     puts "Are you sure you want to quit?"
     answer = gets.chomp
     if answer.downcase == 'yes'
-        puts "goodbye"
+        pause(2, "Goodbye")
         exit
     end
 end 
+
+def pause(seconds, message)
+  puts ""
+  3.times do
+    sleep(seconds/3.0) print "."
+  end
+  puts "\n #{message}"
+end
