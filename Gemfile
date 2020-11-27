@@ -4,5 +4,7 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-gem "espeak-ruby"
+gem "espeak-ruby", require: "espeak"
 # gem "rails"
+
+gem "rainbow", "~> 3.0"

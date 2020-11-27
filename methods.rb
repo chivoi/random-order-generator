@@ -1,4 +1,5 @@
 require 'espeak'
+require 'rainbow'
 
 def output_member_message(length)
   if length == 1
@@ -25,8 +26,9 @@ def add_name_to_group(group)
 end
 
 def display_random_order(arr)
-  arr.shuffle.each do |item|
-    puts item
+  arr.shuffle.each_with_index do |item, index|
+    colored_item = index % 2 ==0 ? Rainbow(item).pink : Rainbow(item).blue
+    pause(1,colored_item)
   end
 end
 
@@ -38,7 +40,7 @@ def quit_program
     exit
   end
 end  
-=======
+
 def output_member_message(length) 
     if length == 1 
         puts "There is #{length} member in the group"
@@ -82,7 +84,8 @@ end
 def pause(seconds, message)
   puts ""
   3.times do
-    sleep(seconds/3.0) print "."
+    sleep(seconds/3.0) 
+    print "."
   end
   puts "\n #{message}"
 end
