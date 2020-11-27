@@ -17,12 +17,7 @@ while true
     when 2
         random_group_running = true
         while random_group_running 
-            copied_group = group.clone
-            while copied_group.length > 0 
-                random_index = rand((copied_group.length))
-                puts copied_group[random_index].capitalize
-                copied_group.delete_at(random_index)
-            end
+            display_random_order(group)
             puts "Press 1 go back"
             puts "Press 2 to quit"
             puts "press any other key to regenerate order"
@@ -33,12 +28,9 @@ while true
             elsif random_group_menu_choice == 2 
                 exit
             end
-
         end  
     when 3
-        puts "Are you sure, type 'yes' to quit"
-        quit_choice = gets.chomp
-        break if quit_choice.downcase == 'yes'
+        quit_program()
     else 
         puts "Invalid input"
     end
