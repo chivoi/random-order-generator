@@ -6,12 +6,13 @@
 #   get name at random index, delete name from array, keep going until array length == 0
 require_relative("methods")
 
-group = ["cat", "Alex", "Daniel", "Andrew", "jario", "Varsha"]
+require_relative('methods')
+group = ["Alex", "Daniel", "Cat", "Andrew", "Jario", "Varsha"]
 
 
 while true
     output_member_message(group.length)
-    case menu_input_select()
+    case menu_input_select
     when 1 
         add_name_to_group(group)
     when 2
@@ -28,9 +29,10 @@ while true
             elsif random_group_menu_choice == 2 
                 exit
             end
+
         end  
     when 3
-        quit_program()
+       quit_program
     else 
         puts "Invalid input"
     end
