@@ -8,3 +8,5 @@ gem "espeak-ruby", require: "espeak"
 # gem "rails"
 
 gem "rainbow", "~> 3.0"
+
+gem "rspec", "~> 3.10"
