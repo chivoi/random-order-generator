@@ -37,4 +37,15 @@ describe 'group' do
 
   end
 
+  describe ".to_s" do
+    
+    it "should be defined" do
+      expect(defined? @group.to_s).to eq("method")
+    end
+
+    it "should return the group name" do
+      expect(@group.to_s).to include("Test group")
+    end
+
+  end
 end
