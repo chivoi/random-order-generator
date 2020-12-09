@@ -21,10 +21,18 @@ class Group
     return File.readlines(@file_path).map{|name| name.strip}
   end
 
+  def randomise_order
+    return @names_array.shuffle
+  end
 
+  def display_random_order
+    randomise_order.each do |name|
+      puts name
+    end
+  end
 
 end
 
-test_group = Group.new("Test group", "./groups/test-group.txt")
+group = Group.new("Test group", "./groups/test-group.txt")
 
-puts test_group.to_s
+group.display_random_order
