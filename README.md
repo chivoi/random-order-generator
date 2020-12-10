@@ -6,6 +6,11 @@ bundle install
 ```
 ## Running the app
 Bash script `runner.sh` included, you may need to change permissions to use the script or `ruby index.rb`
+### Arguments 
+- `-help` - displays help info
+- `-info` - displays program info
+- `-path {path}` - instantiates a group based on the path given
+
 ## Group usage
 The Group Class requires a file to read located in the groups directory. It comes with test-group as an exapmle. See `.file_to_path` for implementation.
 
