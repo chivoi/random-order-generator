@@ -7,6 +7,7 @@
 require_relative 'methods'
 # require 'espeak'
 require_relative 'group'
+require_relative 'errors'
 
 # Handle command line arguments
 
@@ -27,10 +28,11 @@ if ARGV.length > 0
     end
 end
 
-# Assigning the group
+# Group assignment
 group ||= Group.new("Test Group", "./groups/test-group.txt")
 
 # main programme loop
+begin
 while true
     output_member_message(group.names_array.length)
     case menu_input_select
@@ -50,11 +52,19 @@ while true
     when 3
         quit_program
     else 
-        puts "Invalid input"
+        raise ValidationError
     end
     puts "Press any key to continue"
     gets
     system "clear"
 end 
+
+rescue ValidationError
+    puts "Invalid input"
+    retry
+rescue
+    puts "Oops something went wrong"
+    exit
+end
 
 puts "Goodbye"
