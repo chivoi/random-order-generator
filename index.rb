@@ -9,6 +9,24 @@ require_relative 'methods'
 require_relative 'group'
 test_group = Group.new("Test Group", "./groups/test-group.txt")
 
+if ARGV.length > 0
+    flag, *rest = ARGV
+    ARGV.clear
+    case flag
+    when '-help'
+        puts "Read the readme"
+        exit
+    when '-path'
+        puts rest[0]
+        exit
+    when '-info'
+        puts "This program is using Ruby version: #{RUBY_VERSION}"
+    else
+        puts "Invalid argument"
+    end
+end
+
+
 
 # ESpeak::Speech.new("Welcome to the random group selector").speak
 while true
