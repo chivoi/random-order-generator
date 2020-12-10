@@ -34,5 +34,3 @@ class Group
 end
 
 group = Group.new("Test group", "./groups/test-group.txt")
-
-group.display_random_order
